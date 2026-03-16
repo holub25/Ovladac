@@ -182,7 +182,7 @@ void setup() {
 }
 
 void loop() {
-  // přijmi a ulož
+
   if (IrReceiver.decode()) {
     storeCode(IrReceiver.decodedIRData);
     IrReceiver.resume();
@@ -200,7 +200,6 @@ void loop() {
   }
   mode = m;
 
-  // tlačítka - jen jednou na stisk (hrana)
   bool b1 = digitalRead(BTN_SEND1_PIN);
   if (prev1 == HIGH && b1 == LOW){
     sendCode(codes[modeIndex][0]);
